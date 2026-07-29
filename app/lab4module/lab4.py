@@ -31,7 +31,7 @@ class Frame4(ttk.Frame):
 
 
     def file_selection(self):
-        self.selected_file_name.set(fd.askopenfilename())
+        self.selected_file_name.set(f"selected file:  {fd.askopenfilename()}")
         print(self.selected_file_name)
         print(type(self.selected_file_name))
 

@@ -9,7 +9,7 @@ def encode(message: str, BMPfilepath: str) -> any:
     imagebitmap_ndarray = iio.imread(BMPfilepath)
     with open(r"app\lab4module\dictionary_table.json", mode = "r", encoding = "utf-8") as dictionary_table:
         convertion_table = json.load(dictionary_table)
-    message_array = [convertion_table[letter] for letter in message]
+    message_array = [convertion_table[letter] for letter in message if letter != "\n"]
     message_array = [str(letter) for letter in message_array]
     message_array = "".join(message_array)
     message_array_final = [int(symbol) for symbol in message_array]
@@ -43,7 +43,7 @@ def encode(message: str, BMPfilepath: str) -> any:
     print(imagebitmap_ndarray)
     print(f"image type: {type(imagebitmap_ndarray)}")
     print(f"image size/shape: {imagebitmap_ndarray.shape}")
-    iio.imwrite(r"", imagebitmap_ndarray) # insert your own path/URI
+    iio.imwrite(r"C:\Users\voidg\Downloads\1-bmp-sample-7_ENCODED.bmp", imagebitmap_ndarray) # insert your own path/URI
 
 
 
@@ -51,5 +51,5 @@ def encode(message: str, BMPfilepath: str) -> any:
 
 if __name__ == "__main__":
     test_message: str = "Hello world"
-    filepath: str =r"" #insert your own path/URI
+    filepath: str =r"C:\Users\voidg\Downloads\1-bmp-sample-2.bmp" #insert your own path/URI
     encode(test_message, filepath)

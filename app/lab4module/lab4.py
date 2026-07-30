@@ -1,6 +1,6 @@
 import tkinter as tk
 from tkinter import ttk, filedialog as fd
-#from lab4module.logic import stuff
+from lab4module.logic import encode
 
 
 class Frame4(ttk.Frame):
@@ -29,10 +29,15 @@ class Frame4(ttk.Frame):
         self.selected_file_label = ttk.Label(self, textvariable=self.selected_file_name)
         self.selected_file_label.pack(side="bottom", pady=5, anchor="w")
 
+        self.start_button = ttk.Button(self, text="Encode", command=lambda: encode(message = self.encoded_text_field.get(1.0, 'end'), BMPfilepath=self.filepathBMP()))
+        self.start_button.pack(side="bottom", pady=10, anchor="center")
 
+    def filepathBMP(self):
+        fpath = self.selected_file_name.get()
+        return fpath
     def file_selection(self):
-        self.selected_file_name.set(f"selected file:  {fd.askopenfilename()}")
-        print(self.selected_file_name)
+        self.selected_file_name.set(fd.askopenfilename())
+        print(self.selected_file_name.get())
         print(type(self.selected_file_name))
 
 

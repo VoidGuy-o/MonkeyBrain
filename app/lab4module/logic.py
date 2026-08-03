@@ -28,10 +28,10 @@ def encode(message: str, BMPfilepath: str, IsTen = True, debug = False) -> any:
     # modifying the pixel valuel
     letter_num = 0
     for item_a in imagebitmap_ndarray:
-        if letter_num == len(message_array):
+        if letter_num == len(message_array_final):
                         break
         for item_b in item_a:
-            if letter_num == len(message_array):
+            if letter_num == len(message_array_final):
                 break
             while (item_b[0] + item_b[1] + item_b[2]) % encode_number != message_array_final[letter_num]:
                 item_b[0] +=1
@@ -50,6 +50,7 @@ def encode(message: str, BMPfilepath: str, IsTen = True, debug = False) -> any:
 
     #Writing encoded BitMap
     iio.imwrite(r"C:\Users\voidg\Downloads\1-bmp-sample-10_ENCODED.bmp", imagebitmap_ndarray) # insert your own path/URI
+    print("Encoding successful")
 
 
 

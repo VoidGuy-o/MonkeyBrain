@@ -12,7 +12,6 @@ class Frame4(ttk.Frame):
 
         self.encoding = tk.BooleanVar()
         self.selected_file_name = tk.StringVar()
-        print(self.selected_file_name)
         self.pack(**options)
 
         container.notebook.add(self, text="Lab 4")

@@ -22,5 +22,5 @@ if __name__ == "__main__":
     Frame3 = Frame3(App)
     Frame4 = Frame4(App)
     Frame5 = Frame5(App)
-    #Frame6 = Frame6(App)
+    #Frame6 = Frame6(App) #test
     App.mainloop()
